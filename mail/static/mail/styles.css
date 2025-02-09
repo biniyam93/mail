@@ -1,0 +1,72 @@
+textarea {
+    min-height: 400px;
+}
+ /* ✅ Global Styles */
+ body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #4A90E2, #9013FE);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ✅ Navbar */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+    font-weight: 600;
+}
+
+/* ✅ Main Container */
+.container {
+    flex-grow: 1;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* ✅ Footer */
+.footer {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    margin-top: 20px;
+}
+/* Email Card Styles */
+.email-item {
+    border-left: 5px solid transparent;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.email-item:hover {
+    background: rgba(230, 245, 255, 0.6);
+    border-left: 5px solid #007bff;
+}
+.read {
+    background: #f8f9fa;
+    border-left: 5px solid #6c757d;
+}
+.unread {
+    background: #e6f7ff;
+    border-left: 5px solid #007bff;
+}
+.form-control-custom {
+    max-width: 400px;
+    margin: 0 auto; /* Centers the form elements */
+}
+
+#compose-form {
+    width: 100%;
+    max-width: 500px; /* Sets a maximum width for the entire form */
+    margin: 0 auto; /* Centers the form horizontally */
+}

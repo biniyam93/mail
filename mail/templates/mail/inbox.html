@@ -1,0 +1,52 @@
+{% extends "mail/layout.html" %}
+{% load static %}
+
+{% block body %}
+<div class="container mt-4">
+    <h2 class="text-center text-white">{{ request.user.email }}</h2>
+
+    <!-- Action Buttons -->
+    <!-- Action Buttons -->
+<div class="d-flex justify-content-center gap-2 my-3">
+    <button class="btn btn-primary btn-lg text-white" id="inbox">📥 Inbox</button>
+    <button class="btn btn-success btn-lg text-white" id="compose">✉️ Compose</button>
+    <button class="btn btn-info btn-lg text-white" id="sent">📤 Sent</button>
+    <button class="btn btn-warning btn-lg text-dark" id="archived">📂 Archived</button>
+    <a class="btn btn-danger btn-lg text-white" href="{% url 'logout' %}">🚪 Log Out</a>
+</div>
+
+    
+    <hr>
+
+    <!-- Mail Views -->
+    <div id="emails-view" class="p-3"></div>
+    <div id="emails-detail-view" class="p-3"></div>
+    <div id="compose-view" class="p-3">
+        <h3 class="mb-3 text-center">New Email</h3>
+        <form id="compose-form">
+            <div class="mb-3">
+                <label class="form-label">From:</label>
+                <input disabled class="form-control" value="{{ request.user.email }}" style="max-width: 400px;">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">To:</label>
+                <input id="compose-recipients" class="form-control" style="max-width: 400px;">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Subject:</label>
+                <input class="form-control" id="compose-subject" placeholder="Subject" style="max-width: 400px;">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Body:</label>
+                <textarea class="form-control" id="compose-body" placeholder="Write your message..." rows="5" style="max-width: 400px;"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary m-2">Send</button>
+        </form>
+        
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'mail/inbox.js' %}"></script>
+{% endblock %}
